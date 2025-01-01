@@ -39,7 +39,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   // @TODO: move the color schema logic to a wrapper component
-  const { theme, colorSchema: systemColorSchema } = useLoaderData<typeof loader>();
+  const { theme, colorSchema: systemColorSchema } = useLoaderData<typeof loader>() || {};
 
   const isDarkModeInTheBrowser = useMediaQuery('(prefers-color-scheme: dark)');
   const [colorSchema, setColorSchema] = useState(theme === "system" ? systemColorSchema : theme)
