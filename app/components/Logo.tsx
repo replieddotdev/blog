@@ -1,9 +1,10 @@
+import { Link } from "@remix-run/react";
 import { cn } from "~/lib/utils";
 
 export default function Logo() {
   return (
-    <a
-      href="/"
+    <Link
+      to="/"
       className={cn(
         "font-mono text-xl text-black dark:text-white",
         "flex items-center gap-2",
@@ -17,6 +18,6 @@ export default function Logo() {
     >
       <span className="text-blue-600">{'>'}</span>
       replied.dev
-    </a>
+    </Link>
   );
 }
