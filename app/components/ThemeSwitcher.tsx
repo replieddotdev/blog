@@ -3,6 +3,7 @@ import { Monitor, Moon, Sun, SunMoon } from 'lucide-react'
 import { useFetcher } from '@remix-run/react'
 import { Popover, PopoverContent, PopoverTrigger } from '~/components/ui/popover'
 import { Button } from '~/components/ui/button'
+import { useTheme } from '~/providers/Theme'
 
 const themes = [
   {
@@ -22,9 +23,10 @@ const themes = [
   },
 ] as const
 
-export function ThemeSwitcher({ theme }: { theme: string }) {
+export function ThemeSwitcher() {
   const fetcher = useFetcher()
   const [open, setOpen] = React.useState(false)
+  const { preferredTheme } = useTheme()
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -51,7 +53,7 @@ export function ThemeSwitcher({ theme }: { theme: string }) {
             <Button
               type="submit"
               variant="ghost"
-              className={`w-full justify-start gap-2 ${theme === id
+              className={`w-full justify-start gap-2 ${preferredTheme === id
                 ? 'bg-gray-100 dark:bg-gray-800'
                 : 'hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}

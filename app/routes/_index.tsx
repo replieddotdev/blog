@@ -1,7 +1,5 @@
-import type { LoaderFunction, MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 import { Header } from "~/components/Header";
-import { getTheme } from "~/lib/theme.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,19 +8,10 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export const loader: LoaderFunction = async ({ request }) => {
-  const { theme } = await getTheme(request)
-  return Response.json({
-    theme,
-  });
-};
-
 export default function Index() {
-  const { theme } = useLoaderData<typeof loader>();
-
   return (
     <main>
-      <Header theme={theme} />
+      <Header />
     </main>
   );
 }

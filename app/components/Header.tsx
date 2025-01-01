@@ -1,7 +1,7 @@
 import Logo from "~/components/Logo";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
-export function Header({ theme = "light" }: { theme?: "light" | "dark" | "system" }) {
+export function Header() {
   return (
     <header className="border-b border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -19,7 +19,7 @@ export function Header({ theme = "light" }: { theme?: "light" | "dark" | "system
             </a>
           </nav>
 
-          <ThemeSwitcher theme={theme} />
+          <ThemeSwitcher />
         </div>
       </div>
     </header>
