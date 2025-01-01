@@ -15,7 +15,7 @@ const themeStorage = createCookieSessionStorage({
 
 export async function getTheme(request: Request) {
   const session = await themeStorage.getSession(request.headers.get("Cookie"));
-  const theme = session.get("theme") as Theme | null;
+  const theme = session.get("theme") || "system" as Theme;
   const colorSchema = request.headers.get("sec-ch-prefers-color-scheme");
   return {
     theme,

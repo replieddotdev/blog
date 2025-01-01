@@ -6,6 +6,11 @@ import { Button } from '~/components/ui/button'
 
 const themes = [
   {
+    id: 'system',
+    label: 'Sistema',
+    icon: <Monitor className="h-4 w-4" />
+  },
+  {
     id: 'light',
     label: 'Claro',
     icon: <Sun className="h-4 w-4" />
@@ -15,11 +20,6 @@ const themes = [
     label: 'Oscuro',
     icon: <Moon className="h-4 w-4" />
   },
-  {
-    id: 'system',
-    label: 'Sistema',
-    icon: <Monitor className="h-4 w-4" />
-  }
 ] as const
 
 export function ThemeSwitcher({ theme }: { theme: string }) {
