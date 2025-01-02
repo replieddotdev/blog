@@ -6,9 +6,9 @@ import fs from "fs/promises";
 import path from "path";
 
 export async function loader({ params }: LoaderFunctionArgs) {
-  const { post } = params;
-  const postsPath = path.join(process.cwd(), "app/posts");
-  const filePath = path.join(postsPath, `${post}.md`);
+  const { article } = params;
+  const articlesPath = path.join(process.cwd(), "app/articles");
+  const filePath = path.join(articlesPath, `${article}.md`);
 
   try {
     const file = await fs.readFile(filePath, "utf-8");
@@ -20,11 +20,11 @@ export async function loader({ params }: LoaderFunctionArgs) {
       html
     };
   } catch (error) {
-    throw new Response("Post not found", { status: 404 });
+    throw new Response("Article not found", { status: 404 });
   }
 }
 
-export default function Post() {
+export default function Article() {
   const { frontmatter, html } = useLoaderData<typeof loader>();
 
   return (

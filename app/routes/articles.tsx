@@ -1,7 +1,7 @@
 import { Outlet } from "@remix-run/react";
 import { Header } from "~/components/Header";
 
-export default function PostsLayout() {
+export default function ArticlesLayout() {
   return (
     <main>
       <Header />
