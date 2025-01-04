@@ -9,6 +9,7 @@ import {
 import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 
 import "./tailwind.css";
+import "./markdown.css"
 import { getTheme } from "./lib/theme.server";
 import { ReactNode } from "react";
 import { ThemeProvider, useTheme } from "./providers/Theme";
