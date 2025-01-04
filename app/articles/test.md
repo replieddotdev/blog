@@ -1,8 +1,13 @@
 ---
 title: Mi primer post
 created: 2025-01-01
-updated: 2025-01-01
+updated: 2025-01-03
 writer: Daniel Lucas
+category: Arquitectura
+tags:
+  - javascript
+  - node
+  - api
 ---
 
 # Contenido del post
